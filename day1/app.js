@@ -144,7 +144,6 @@
 //     }
 // }
 
-
 // let a = 12;
 // let b = 35;
 // let c;
@@ -210,5 +209,4 @@ switch (a) {
     default :
         alert ("Not vowels")
     
-
 }
