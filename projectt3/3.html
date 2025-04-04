@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<style>
+    th,td{
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+<body>
+    <table class="flex justify-center items-center mt-10 text-center">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+
+        <tr>
+            <td>Hindi</td>
+            <td><input type="text" name="" id="hindi" class="outline-none"></td>
+        </tr>
+        <tr>
+            <td>science</td>
+            <td><input type="text" name="" id="science" class="outline-none"></td>
+        </tr>
+        <tr>
+            <td>Computer</td>
+            <td><input type="text" name="" id="computer" class="outline-none"></td>
+        </tr>
+        <tr>
+            <td>Social science</td>
+            <td><input type="text" name="" id="social" class="outline-none"></td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td><input type="text" name="" id="english" class="outline-none"></td>
+        </tr>
+        <tr>
+            <td>Maths</td>
+            <td><input type="text" name="" id="maths" class="outline-none"></td>
+        </tr>
+        <tr>
+            <td><button class="px-9 py-3 bg-[#6858] rounded-md outline-none" onclick="calculatetotal()">Total</button></td>
+            <td><input type="text" name="" id="totalmarks" class="outline-none"></td>
+        </tr>
+        <tr>
+            <td><button class="px-3 py-3 bg-[#6858] rounded-md" onclick="calculatetotal()">Percentage</button></td>
+            <td><input type="text" name="" id="percentage" class="outline-none"></td>
+        </tr>
+        
+        
+    </table>
+
+    <div class="flex justify-center mt-5">
+        <button class="px-3 py-3 bg-indigo-400 w-1/6 hover:bg-indigo-600 transition-all hover:translate-y-2 rounded-lg" onclick="clearall()">Clear</button>
+    </div>
+
+    <script src="3.js"></script>
+</body>
+</html>

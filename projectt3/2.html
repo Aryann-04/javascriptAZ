@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-100">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-80 text-center">
+        <h1 class="text-2xl font-bold text-gray-700 mb-4">Calculator</h1>
+        
+        <input type="number" id="inp" class="w-full p-2 border rounded mb-2 text-lg" placeholder="Enter first number">
+        <input type="number" id="inp1" class="w-full p-2 border rounded mb-4 text-lg" placeholder="Enter second number">
+        
+        <div class="grid grid-cols-2 gap-2 mb-4">
+            <button onclick="calculate('+')" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">+ (Add)</button>
+            <button onclick="calculate('-')" class="bg-red-500 text-white p-2 rounded hover:bg-red-600">- (Subtract)</button>
+            <button onclick="calculate('*')" class="bg-green-500 text-white p-2 rounded hover:bg-green-600">× (Multiply)</button>
+            <button onclick="calculate('/')" class="bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600">÷ (Divide)</button>
+        </div>
+        
+        <h2 id="result" class="text-xl font-semibold text-gray-700"></h2>
+    </div>
+
+    <script>
+        function calculate(operator) {
+            let inp = document.getElementById("inp").value;
+            let inp1 = document.getElementById("inp1").value;
+            let result = document.getElementById("result");
+            
+            if (inp === "" || inp1 === "") {
+                result.innerText = "Please enter both numbers";
+                return;
+            }
+            
+            let num1 = Number(inp);
+            let num2 = Number(inp1);
+            let output;
+            
+            switch (operator) {
+                case '+': output = num1 + num2; break;
+                case '-': output = num1 - num2; break;
+                case '*': output = num1 * num2; break;
+                case '/': 
+                    if (num2 === 0) {
+                        result.innerText = "Cannot divide by zero";
+                        return;
+                    }
+                    output = num1 / num2;
+                    break;
+            }
+            
+            result.innerText = "Result: " + output;
+        }
+    </script>
+</body>
+</html>
